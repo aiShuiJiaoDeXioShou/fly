@@ -1,0 +1,4 @@
+# 项目排除路径
+/fly1/dist/
+/fly1/dist/js/
+/fly1/node_modules/
