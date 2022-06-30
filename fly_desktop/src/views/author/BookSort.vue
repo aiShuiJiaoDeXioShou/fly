@@ -45,8 +45,9 @@ export default {
 
 <style lang='less' scoped>
 .yuep {
-  margin: 0 auto;
+    margin: 0 auto;
 }
+
 .book_sort {
     min-width: 30%;
     min-height: 40%;
