@@ -8,6 +8,8 @@ import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 Vue.use(mavonEditor)
 Vue.config.productionTip = false
+// 引入animate.css 库
+import 'animate.css';
 
 new Vue({
   router,

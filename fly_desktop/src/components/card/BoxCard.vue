@@ -23,7 +23,5 @@ export default {
     height: 30vh;
     box-shadow: 0 15px 25px rgb(0, 0, 0, 0.1);
     backdrop-filter: blur(30px);
-    margin-right: 1vw;
-    margin-top: 1vw;
 }
 </style>

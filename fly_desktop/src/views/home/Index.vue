@@ -2,9 +2,14 @@
 <template>
   <div class="index-root">
 
+    <!-- 当前系统用户的头像 -->
+    <div class="index-user-head">
+      <user-head-portrait-vue></user-head-portrait-vue>
+    </div>
+
     <div class="index-data">
-      <div v-for="(item, index) in 3" :key="index">
-        <box-card :card="card"></box-card>
+      <div :class="card_load" v-for="(item, index) in 3" :key="index">
+        <box-card class="data-card" :card="card"></box-card>
       </div>
     </div>
 
@@ -13,15 +18,21 @@
 
 <script>
 import BoxCard from '../../components/card/BoxCard.vue'
+import UserHeadPortraitVue from '../../components/user_card/UserHeadPortrait.vue'
 export default {
   name: 'Index',
   data() {
     return {
-      card: {}
+        card_load:['animate__animated','animate__lightSpeedInRight'],
+        card:{}
     }
   },
   components: {
     BoxCard,
+    UserHeadPortraitVue
+  },
+  created(){
+   
   }
 }
 
@@ -29,13 +40,28 @@ export default {
 
 <style lang='less' scoped>
 .index-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5vh;
 
+  &>div {
+    margin-top: 5vh;
+  }
+
+ 
   .index-data {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+
+    .data-card {
+      margin-right: 1vw;
+      margin-top: 2vw;
+    }
+
   }
 }
 
@@ -44,11 +70,14 @@ export default {
 
   .index-root {
     // 子元素垂直居中
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     height: 100vh;
+  }
+}
+
+@media (max-width: 580px) {
+   .index-root>div:first-child {
+    margin-top: 12vh;
   }
 }
 </style>
