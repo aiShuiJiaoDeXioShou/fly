@@ -1,3 +1,8 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-redeclare */
+/* eslint-disable no-inner-declarations */
+/* eslint-disable no-case-declarations */
 /* -----------------------------------------------
 /* Author : Vincent Garreau  - vincentgarreau.com
 /* MIT license: http://opensource.org/licenses/MIT
@@ -404,18 +409,21 @@ var pJS = function (tag_id, params) {
     if (p.radius_bubble != undefined) {
       var radius = p.radius_bubble;
     } else {
+      // eslint-disable-next-line no-redeclare
       var radius = p.radius;
     }
 
     if (p.opacity_bubble != undefined) {
       var opacity = p.opacity_bubble;
     } else {
+      // eslint-disable-next-line no-redeclare
       var opacity = p.opacity;
     }
 
     if (p.color.rgb) {
       var color_value = 'rgba(' + p.color.rgb.r + ',' + p.color.rgb.g + ',' + p.color.rgb.b + ',' + opacity + ')';
     } else {
+      // eslint-disable-next-line no-redeclare
       var color_value = 'hsla(' + p.color.hsl.h + ',' + p.color.hsl.s + '%,' + p.color.hsl.l + '%,' + opacity + ')';
     }
 
@@ -460,6 +468,9 @@ var pJS = function (tag_id, params) {
 
       case 'image':
 
+
+        // eslint-disable-next-line no-case-declarations
+        // eslint-disable-next-line no-inner-declarations
         function draw() {
           pJS.canvas.ctx.drawImage(
             img_obj,
@@ -473,6 +484,7 @@ var pJS = function (tag_id, params) {
         if (pJS.tmp.img_type == 'svg') {
           var img_obj = p.img.obj;
         } else {
+          // eslint-disable-next-line no-redeclare
           var img_obj = pJS.tmp.img_obj;
         }
 
@@ -558,6 +570,7 @@ var pJS = function (tag_id, params) {
           y_bottom: pJS.canvas.h
         }
       } else {
+        // eslint-disable-next-line no-redeclare
         var new_pos = {
           x_left: -p.radius,
           x_right: pJS.canvas.w + p.radius,
@@ -657,7 +670,9 @@ var pJS = function (tag_id, params) {
   pJS.fn.particlesRefresh = function () {
 
     /* init all */
+    // eslint-disable-next-line no-undef
     cancelRequestAnimFrame(pJS.fn.checkAnimFrame);
+    // eslint-disable-next-line no-undef
     cancelRequestAnimFrame(pJS.fn.drawAnimFrame);
     pJS.tmp.source_svg = undefined;
     pJS.tmp.img_obj = undefined;
@@ -816,6 +831,7 @@ var pJS = function (tag_id, params) {
               }
             } else {
               var dif = p.radius - pJS.interactivity.modes.bubble.size,
+                // eslint-disable-next-line no-redeclare
                 size = p.radius - (dif * ratio);
               if (size > 0) {
                 p.radius_bubble = size;
@@ -835,6 +851,7 @@ var pJS = function (tag_id, params) {
                 p.opacity_bubble = opacity;
               }
             } else {
+              // eslint-disable-next-line no-redeclare
               var opacity = p.opacity - (pJS.particles.opacity.value - pJS.interactivity.modes.bubble.opacity) * ratio;
               if (opacity < p.opacity && opacity >= pJS.interactivity.modes.bubble.opacity) {
                 p.opacity_bubble = opacity;
@@ -1097,6 +1114,7 @@ var pJS = function (tag_id, params) {
       });
 
       /* el on onmouseleave */
+      // eslint-disable-next-line no-unused-vars
       pJS.interactivity.el.addEventListener('mouseleave', function (e) {
 
         pJS.interactivity.mouse.pos_x = null;
@@ -1236,6 +1254,7 @@ var pJS = function (tag_id, params) {
   pJS.fn.vendors.destroypJS = function () {
     cancelAnimationFrame(pJS.fn.drawAnimFrame);
     canvas_el.remove();
+    // eslint-disable-next-line no-undef
     pJSDom = null;
   };
 
@@ -1317,10 +1336,13 @@ var pJS = function (tag_id, params) {
 
         if (pJS.tmp.count_svg >= pJS.particles.number.value) {
           pJS.fn.particlesDraw();
+          // eslint-disable-next-line no-undef
           if (!pJS.particles.move.enable) cancelRequestAnimFrame(pJS.fn.drawAnimFrame);
+          // eslint-disable-next-line no-undef
           else pJS.fn.drawAnimFrame = requestAnimFrame(pJS.fn.vendors.draw);
         } else {
           //console.log('still loading...');
+          // eslint-disable-next-line no-undef
           if (!pJS.tmp.img_error) pJS.fn.drawAnimFrame = requestAnimFrame(pJS.fn.vendors.draw);
         }
 
@@ -1351,9 +1373,11 @@ var pJS = function (tag_id, params) {
     if (pJS.particles.shape.type == 'image') {
 
       if (pJS.tmp.img_type == 'svg' && pJS.tmp.source_svg == undefined) {
+        // eslint-disable-next-line no-undef
         pJS.tmp.checkAnimFrame = requestAnimFrame(check);
       } else {
         //console.log('images loaded! cancel check');
+        // eslint-disable-next-line no-undef
         cancelRequestAnimFrame(pJS.tmp.checkAnimFrame);
         if (!pJS.tmp.img_error) {
           pJS.fn.vendors.init();
@@ -1459,11 +1483,11 @@ function hexToRgb(hex) {
     g: parseInt(result[2], 16),
     b: parseInt(result[3], 16)
   } : null;
-};
+}
 
 function clamp(number, min, max) {
   return Math.min(Math.max(number, min), max);
-};
+}
 
 function isInArray(value, array) {
   return array.indexOf(value) > -1;
@@ -1514,6 +1538,7 @@ window.particlesJS = function (tag_id, params) {
 
   /* launch particle.js */
   if (canvas != null) {
+    // eslint-disable-next-line no-undef
     pJSDom.push(new pJS(tag_id, params));
   }
 

@@ -32,21 +32,21 @@ export default {
           title: '设定集！',
           describe: "在这里，描绘那个精彩的世界...",
           path: '/',
-          image: 'C:/Users/有天道/Pictures/Saved Pictures/leimu2.jpeg',
+          image: '/img/leimu2.jpeg',
           is_default: true,
         },
         {
           title: '规则书！',
           describe: "你也不想你的规则没人看吧？",
           path: '/',
-          image: 'C:/Users/有天道/Pictures/Saved Pictures/leimu.jpeg',
+          image: '/img/leimu.jpeg',
           is_default: false,
         },
         {
           title: '工具集合！',
           describe: "包含了地图，分布式开团工具哦！",
-          path: '/',
-          image: 'C:/Users/有天道/Pictures/Saved Pictures/baokemen.jpg',
+          path: '/home',
+          image: '/img/baokemen.jpg',
           is_default: false,
         },
       ],
@@ -78,7 +78,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vh 0 0 0;
   background: url('/img/bg1.jpg') no-repeat center center;
   background-size: cover;
 

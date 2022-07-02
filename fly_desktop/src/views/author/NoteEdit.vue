@@ -1,6 +1,6 @@
 <!-- 文本编辑器 -->
 <template>
-    <div>
+    <div class="note-root">
         <mavon-editor ref=md @imgAdd="imgAdd" v-model="text" @change="changeData" style="min-height: 800px">
             <template slot="right-toolbar-before">
                 <el-button icon="el-icon-s-promotion" circle type="button" @click="release()" aria-hidden="true"
@@ -47,5 +47,11 @@ export default {
 </script>
 
 <style lang='less' scoped>
+.note-root {
+    z-index: 1;
 
+    .v-note-wrapper {
+        z-index: 1;
+    }
+}
 </style>

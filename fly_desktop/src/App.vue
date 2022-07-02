@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="app-menu">
-      <MenuVue />
+      <menu-vue />
     </div>
     <router-view></router-view>
 
@@ -9,12 +9,8 @@
     <div class="app-navigation">
       <el-breadcrumb separator="/">
 
-        <el-breadcrumb-item :to="{ path: '/' }">
-          <span class="navbar-text">首页</span>
-        </el-breadcrumb-item>
-
-        <el-breadcrumb-item to="/login">
-          <span class="navbar-text">登录 or 注册页面</span>
+        <el-breadcrumb-item v-for="(item, index) in router_paths" :key="index" :to="{ path: item.path, name: item.name }">
+          <span class="navbar-text">{{ item.name }}</span>
         </el-breadcrumb-item>
 
       </el-breadcrumb>
@@ -71,7 +67,7 @@ export default {
   position: fixed;
   bottom: 3vh;
   left: 2vw;
-  z-index: 4;
+  z-index: 999;
 
   .navbar-text {
     color: #fff;

@@ -3,8 +3,12 @@
     <aside class="show-menu menu">
       <p class="menu-label">数据查看</p>
       <ul class="menu_list menu-list">
-        <li><router-link to="/book_sort">起点月票榜</router-link></li>
-        <li><router-link to="/note_edit">文本编辑器</router-link></li>
+        <li>
+          <router-link to="/home/">起点月票榜</router-link>
+        </li>
+        <li>
+          <router-link to="/note_edit">文本编辑器</router-link>
+        </li>
       </ul>
     </aside>
     <div class="show">
@@ -18,7 +22,7 @@
 export default {
   name: 'Home',
   components: {
-   
+
   }
 }
 </script>
@@ -26,12 +30,18 @@ export default {
 <style lang="less" scoped>
 .home {
   display: flex;
+  height: 100vh;
+  padding-top: @Menu_H * 1.5;
+  position: relative;
+
   .show-menu {
     flex: 0.2;
   }
+
   .show {
     flex: 0.8;
   }
+
   .menu_list {
     overflow: hidden;
     text-overflow: ellipsis;

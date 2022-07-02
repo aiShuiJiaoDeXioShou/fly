@@ -51,5 +51,6 @@ export default {
 .book_sort {
     min-width: 30%;
     min-height: 40%;
+    height: 100vh;
 }
 </style>

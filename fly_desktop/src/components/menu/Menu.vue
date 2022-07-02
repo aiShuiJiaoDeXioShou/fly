@@ -86,6 +86,7 @@ export default {
     width: 100%;
     position: relative;
     font-size: @Menu_Font_Size;
+    z-index: 999;
 
     .menu-icon {
         -webkit-app-region: no-drag;
