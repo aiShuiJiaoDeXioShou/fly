@@ -1,5 +1,6 @@
 const path = require('path')
 
+
 function addStyleResource(rule) {
   rule.use('style-resource')
     .loader('style-resources-loader')
@@ -13,7 +14,11 @@ function addStyleResource(rule) {
 }
 
 module.exports = {
-
+  pluginOptions: {
+    electronBuilder: {
+      nodeIntegration: true
+    }
+  },
   publicPath: './',
   lintOnSave: true,
   pages: {

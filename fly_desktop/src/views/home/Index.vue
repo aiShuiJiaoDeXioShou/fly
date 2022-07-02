@@ -2,17 +2,20 @@
 <template>
   <div class="index-root">
 
+    <div class="bg-particle">
+      <vue-particles color="#fff"></vue-particles>
+    </div>
+
     <!-- 当前系统用户的头像 -->
     <div class="index-user-head">
       <user-head-portrait-vue></user-head-portrait-vue>
     </div>
 
     <div class="index-data">
-      <div :class="card_load" v-for="(item, index) in 3" :key="index">
-        <box-card class="data-card" :card="card"></box-card>
+      <div :class="card_load" v-for="(item, index) in cards" :key="index">
+        <box-card class="data-card" :card="item"></box-card>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -23,33 +26,67 @@ export default {
   name: 'Index',
   data() {
     return {
-        card_load:['animate__animated','animate__lightSpeedInRight'],
-        card:{}
+      card_load: ['animate__animated', 'animate__lightSpeedInRight'],
+      cards: [
+        {
+          title: '设定集！',
+          describe: "在这里，描绘那个精彩的世界...",
+          path: '/',
+          image: 'C:/Users/有天道/Pictures/Saved Pictures/leimu2.jpeg',
+          is_default: true,
+        },
+        {
+          title: '规则书！',
+          describe: "你也不想你的规则没人看吧？",
+          path: '/',
+          image: 'C:/Users/有天道/Pictures/Saved Pictures/leimu.jpeg',
+          is_default: false,
+        },
+        {
+          title: '工具集合！',
+          describe: "包含了地图，分布式开团工具哦！",
+          path: '/',
+          image: 'C:/Users/有天道/Pictures/Saved Pictures/baokemen.jpg',
+          is_default: false,
+        },
+      ],
+      is_bg: true
     }
   },
   components: {
     BoxCard,
-    UserHeadPortraitVue
+    UserHeadPortraitVue,
   },
-  created(){
-   
+  created() {
+
   }
 }
 
 </script>
 
 <style lang='less' scoped>
+.bg-particle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  z-index: 0;
+}
+
 .index-root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 5vh;
+  padding: 5vh 0 0 0;
+  background: url('/img/bg1.jpg') no-repeat center center;
+  background-size: cover;
 
   &>div {
     margin-top: 5vh;
   }
 
- 
+
   .index-data {
     display: flex;
     flex-wrap: wrap;
@@ -71,12 +108,13 @@ export default {
   .index-root {
     // 子元素垂直居中
     justify-content: center;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
 @media (max-width: 580px) {
-   .index-root>div:first-child {
+  .index-root>div:first-child {
     margin-top: 12vh;
   }
 }

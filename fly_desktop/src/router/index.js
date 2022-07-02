@@ -43,6 +43,11 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: () => import('../views/user/Login.vue')
+  },
+  {
+    path: '/raindrop',
+    name: 'Raindrop',
+    component: () => import('../components/bg/Raindrop.vue')
   }
 
 ]

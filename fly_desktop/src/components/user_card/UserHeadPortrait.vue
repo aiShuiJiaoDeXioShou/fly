@@ -268,7 +268,6 @@ export default {
 }
 
 .envelope_click {
-    transform: translateY(-50px);
     transition: all 1s;
     height: 250px;
 }
