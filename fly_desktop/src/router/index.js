@@ -72,17 +72,16 @@ function navigate(to, form, next) {
   // 获取当前路由的父类
   let parent = self.parent
 
+  // 如果不为空比较form.parent是否与to.parent相同
   // 判断将要去往的路由父类是否为空
-  if (parent) {
-    // 如果不为空比较form.parent是否与to.parent相同
-    let form_self = getRouterPaths(form)
-    if (form_self)
-      if (form_self.parent)
-        if (form_self.parent.path === parent.path) {
-          // 如果相同,则删除paths数组,最后一位
-          paths = paths.slice(0, paths.length - 1);
-        }
-  }
+  let form_self = getRouterPaths(form)
+  if (parent && form_self)
+    if (form_self.parent)
+      if (form_self.parent.path === parent.path) {
+        let i = getPathIndex(paths, form_self.parent.path)
+        // 删除包括i的所有路由
+        paths.splice(i, paths.length - i - 1)
+      }
 
   // 判断父类是否为空,且paths是否存在
   if (parent && paths.filter(item => item.path === parent.path).length === 0) {
@@ -102,6 +101,20 @@ function getRouterPaths(to) {
   let last = matcheds[matcheds.length - 1]
   // 返回当前对象
   return last
+}
+
+// 获取指定path所在的坐标
+function getPathIndex(paths, path) {
+  let index = -1
+  for (let i = 0; i < paths.length; i++) {
+    // 如果包含了该路由，则不添加路由组
+    if (paths[i].path === path) {
+      index = i
+      return
+    }
+  }
+
+  return index
 }
 
 export default router
