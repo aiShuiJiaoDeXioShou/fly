@@ -6,6 +6,7 @@
 package service
 
 import (
+	"flye/service/config"
 	"flye/service/netreptile/qidiansort"
 	"fmt"
 	"github.com/gin-gonic/gin"
@@ -19,6 +20,7 @@ import (
 func ServiceApi(e *gin.Engine) {
 	rg := e.Group("/api")
 	qidiansort.NewQiDianSort(rg)
+	config.NewConfigService(rg)
 }
 
 func StartService() {
