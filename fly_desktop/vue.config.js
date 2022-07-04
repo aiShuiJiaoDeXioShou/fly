@@ -16,7 +16,17 @@ function addStyleResource(rule) {
 module.exports = {
   pluginOptions: {
     electronBuilder: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      builderOptions: {
+        "productName": "fly-desktop",
+        "win": {
+          "icon": "favicon.ico"//这里注意配好图标路径
+        },
+      },
+      "extraResources": {
+        "from": "./config.yaml",
+        "to": "../"
+      }
     }
   },
   publicPath: './',

@@ -9,7 +9,8 @@
     <div class="app-navigation">
       <el-breadcrumb separator="/">
 
-        <el-breadcrumb-item v-for="(item, index) in router_paths" :key="index" :to="{ path: item.path, name: item.name }">
+        <el-breadcrumb-item v-for="(item, index) in router_paths" :key="index"
+          :to="{ path: item.path, name: item.name }">
           <span class="navbar-text">{{ item.name }}</span>
         </el-breadcrumb-item>
 

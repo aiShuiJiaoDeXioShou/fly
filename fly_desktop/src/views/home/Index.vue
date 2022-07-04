@@ -16,6 +16,7 @@
         <box-card class="data-card" :card="item"></box-card>
       </div>
     </div>
+
   </div>
 </template>
 

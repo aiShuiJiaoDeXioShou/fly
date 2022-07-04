@@ -1,8 +1,8 @@
 <!-- 查看起点小说的排行榜 -->
 <template>
-    <div class="book_sort" v-loading="loading">
+    <div class="book_sort">
 
-        <table class="yuep table">
+        <table class="yuep table" v-loading="loading">
             <tr>
                 <th>序号</th>
                 <th>书名</th>
