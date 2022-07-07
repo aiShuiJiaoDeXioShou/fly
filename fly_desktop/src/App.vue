@@ -71,11 +71,11 @@ export default {
   z-index: 999;
 
   .navbar-text {
-    color: #fff;
+    color: @Buttom_Bar_Color;
     cursor: pointer;
 
     &:hover {
-      color: #00b3ff;
+      color: @Buttom_Bar_Color_Hover;
     }
   }
 }

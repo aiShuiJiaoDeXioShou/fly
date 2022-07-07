@@ -17,7 +17,7 @@ export default {
         }
     },
     mounted() {
-        console.log("你是住");
+
     },
     components: {
         GoodsSTL,
@@ -27,9 +27,4 @@ export default {
 </script>
 
 <style lang='less' scoped>
-.class_box_root {
-    background: red;
-    height: 500px;
-    width: 600px;
-}
 </style>

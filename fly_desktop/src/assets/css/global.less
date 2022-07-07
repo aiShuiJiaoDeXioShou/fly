@@ -90,3 +90,20 @@ body::-webkit-scrollbar {
 ::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(0, 0, 0, 0.4);
 }
+
+// 透明色卡片
+.card_transparent {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+// 删除按钮旋转效果
+.delete {
+
+  &:hover {
+    transform: rotate(180deg);
+    transition: .5s all;
+  }
+}
