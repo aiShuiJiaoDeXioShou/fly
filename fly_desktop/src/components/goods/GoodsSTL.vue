@@ -1,7 +1,7 @@
 <!-- 物品分类的模板 -->
 <template>
-    <div class="goods_stl_root">
-        <div :class="card_load_an">
+    <div class="goods_stl_root animate__animated animate__backInRight">
+        <div id="goods_stl_root" :class="card_load_an">
             <!-- 删除按钮 -->
             <button @click="deleteOne" :class="{ 'delete': true, 'goods_delete_color': !is_good_side }"></button>
             <div class="goods_positive" v-if="!is_good_side">
@@ -10,60 +10,10 @@
                     <img src="../../assets/icon.png" alt="test">
                 </figure>
 
+                <!-- 人物表单属性 -->
                 <item-form-vue />
-
-                <div class="block character-tag">
-
-                    <!-- 人物标签 -->
-                    <span class="tag is-primary is-light">
-                        <button class="delete is-small"></button>
-                        <div class="is-build-data">Primary</div>
-                        <div class="is-build">
-                            <input class="input is-link" type="text" placeholder="标签:">
-                        </div>
-                    </span>
-
-                    <span class="tag is-link is-light">
-                        <button class="delete is-small"></button>
-                        <div class="is-build-data">Link</div>
-                        <div class="is-build">
-                            <input class="input is-link" type="text" placeholder="标签:">
-                        </div>
-                    </span>
-
-                    <span class="tag is-info is-light">
-                        <button class="delete is-small"></button>
-                        <div class="is-build-data">Info</div>
-                        <div class="is-build">
-                            <input class="input is-link" type="text" placeholder="标签:">
-                        </div>
-                    </span>
-
-                    <span class="tag is-success is-light">
-                        <button class="delete is-small"></button>
-                        <div class="is-build-data">Success</div>
-                        <div class="is-build">
-                            <input class="input is-link" type="text" placeholder="标签:">
-                        </div>
-                    </span>
-
-                    <span class="tag is-warning is-light">
-                        <button class="delete is-small"></button>
-                        <div class="is-build-data">Warning</div>
-                        <div class="is-build">
-                            <input class="input is-link" type="text" placeholder="标签:">
-                        </div>
-                    </span>
-
-                    <span class="tag is-danger is-light">
-                        <button class="delete is-small"></button>
-                        <div class="is-build-data">Danger</div>
-                        <div class="is-build">
-                            <input class="input is-link" type="text" placeholder="标签:">
-                        </div>
-                    </span>
-
-                </div>
+                <!-- 人物tag属性 -->
+                <goods-tags-vue />
             </div>
 
             <div class="good_side" v-if="is_good_side">
@@ -99,6 +49,9 @@ import ItemFormVue from './ItemForm.vue';
 // 导入特殊的列点击效果，双击开启编辑，或者双击关闭编辑
 import { columnClick } from '../../comm/special_action/sp_click_action.js';
 import ItemTextVue from './ItemText.vue';
+import GoodsTagsVue from './GoodsTags.vue';
+
+
 
 
 export default {
@@ -168,7 +121,8 @@ export default {
     },
     components: {
         ItemFormVue,
-        ItemTextVue
+        ItemTextVue,
+        GoodsTagsVue
     }
 }
 

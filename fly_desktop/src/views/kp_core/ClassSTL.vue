@@ -1,6 +1,6 @@
 <!-- 分类模板 -->
 <template>
-    <div>
+    <div class="class_stl_root go_through_motions">
 
         <div class="tile is-ancestor">
             <div class="tile is-vertical is-8">
@@ -66,6 +66,5 @@ export default {
 
 </script>
 
-<style lang='stylus' scoped>
-
+<style lang='less' scoped>
 </style>

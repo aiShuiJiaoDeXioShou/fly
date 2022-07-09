@@ -1,6 +1,6 @@
 <!-- 查看起点小说的排行榜 -->
 <template>
-    <div class="book_sort">
+    <div class="book_sort go_through_motions">
 
         <table class="yuep table" v-loading="loading">
             <tr>

@@ -1,6 +1,6 @@
 <!-- 读写文件的视图层 -->
 <template>
-    <div>
+    <div class="go_through_motion">
         <button class="button" @click="read">读文件</button><br><br>
         <button class="button is-dark">写文件</button>
         <div class="view">

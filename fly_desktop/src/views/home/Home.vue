@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <aside class="show-menu menu">
-      <p class="menu-label">数据查看</p>
       <ul class="menu_list menu-list">
         <li>
           <router-link class="menu-link" to="/home/">起点月票榜</router-link>
@@ -31,7 +30,10 @@
               <router-link class="menu-link" to="/note_edit">日记功能</router-link>
             </li>
             <li>
-              <router-link class="menu-link" to="qq_assistant">qq群助手</router-link>
+              <router-link class="menu-link" to="/qq_assistant">qq群助手</router-link>
+            </li>
+            <li>
+              <router-link class="menu-link" to="/mimicry_menu">拟态UI</router-link>
             </li>
           </ul>
         </li>

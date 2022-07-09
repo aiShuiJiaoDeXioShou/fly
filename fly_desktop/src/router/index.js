@@ -50,6 +50,11 @@ const routes = [
         path: '/qq_assistant',
         name: 'QQ助手',
         component: () => import('../views/kp_core/QQAssistant.vue')
+      },
+      {
+        path: '/mimicry_menu',
+        name: '拟态MenuUI',
+        component: () => import('../views/my_menu/MimicryMenu.vue')
       }
     ]
   },

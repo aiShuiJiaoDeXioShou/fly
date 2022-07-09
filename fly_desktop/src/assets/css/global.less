@@ -3,6 +3,7 @@
 * {
   padding: 0;
   margin: 0;
+
 }
 
 a {
@@ -18,18 +19,6 @@ button {
   -webkit-app-region: no-drag;
 }
 
-// 设置统一的字体样式，免得太难看了
-/* @font-face {
-  font-family: 'tuyacn';
-  src: url('D: \\3.Node.js\\worspace-javaScript\\flydev\\fly_desktop\\src\\assets\\font\\tuyacn.ttf');
-  font-weight: normal;
-  font-style: normal;
-} */
-/* 
-* {
-  font-family: 'tuyacn';
-} */
-
 
 body {
   width: 100vw;
@@ -38,35 +27,6 @@ body {
 }
 
 // 下面都是滚动条的样式
-
-/* ::-webkit-scrollbar {
-    width: 8px;
-    height: 4px
-  }
-
-  ::-webkit-scrollbar-button {
-    width: 0px;
-    height: 0
-  }
-
-  ::-webkit-scrollbar-track {
-    background: 0 0
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #61a8df;
-    -webkit-transition: .3s;
-    transition: .3s
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #37dace
-  }
-
-  ::-webkit-scrollbar-thumb:active {
-    background-color: #17bbaf
-  } */
-
 // 设置滚动条样式
 /* 设置滚动条的样式 */
 body::-webkit-scrollbar {
@@ -80,6 +40,8 @@ body::-webkit-scrollbar {
   border-radius: 10px;
 }
 
+·
+
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
@@ -92,7 +54,7 @@ body::-webkit-scrollbar {
 }
 
 // 透明色卡片
-.card_transparent {
+.global_card_transparent {
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
@@ -107,3 +69,134 @@ body::-webkit-scrollbar {
     transition: .5s all;
   }
 }
+
+@second_1s: 1s;
+@second_5ms: .5s;
+@second_2s: 2s;
+
+// 过场动漫开始
+.animate__animated {
+  -webkit-animation-duration: @second_1s;
+  animation-duration: @second_1s;
+  -webkit-animation-duration: @second_1s;
+  animation-duration: @second_1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animate__animated_5ms {
+  -webkit-animation-duration: @second_5ms;
+  animation-duration: @second_5ms;
+  -webkit-animation-duration: @second_5ms;
+  animation-duration: @second_5ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animate__animated_2s {
+  -webkit-animation-duration: @second_2s;
+  animation-duration: @second_2s;
+  -webkit-animation-duration: @second_2s;
+  animation-duration: @second_2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes backInRight {
+  0% {
+    -webkit-transform: translateX(2000px) scale(0.7);
+    transform: translateX(2000px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    -webkit-transform: translateX(0px) scale(0.7);
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate__backInRight {
+  -webkit-animation-name: backInRight;
+  animation-name: backInRight;
+}
+
+
+.go_through_motions {
+  .animate__animated();
+  .animate__backInRight();
+}
+
+// 过场动漫结束
+
+// 抖动特效开始
+@-webkit-keyframes shakeX {
+
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-2px, 0, 0);
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+    transform: translate3d(2px, 0, 0);
+  }
+}
+
+@keyframes shakeX {
+
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-2px, 0, 0);
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+    transform: translate3d(2px, 0, 0);
+  }
+}
+
+.animate__shakeX {
+  -webkit-animation-name: shakeX;
+  animation-name: shakeX;
+}
+
+.go_shake {
+  .animate__animated_2s();
+  .animate__shakeX();
+  animation-iteration-count: infinite;
+}
+
+// 抖动特效结束
