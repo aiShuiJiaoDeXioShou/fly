@@ -55,6 +55,11 @@ const routes = [
         path: '/mimicry_menu',
         name: '拟态MenuUI',
         component: () => import('../views/my_menu/MimicryMenu.vue')
+      },
+      {
+        path: '/web_box_details',
+        name: '卡组详情',
+        component: () => import('../views/kp_core/WebBoxDetails.vue')
       }
     ]
   },

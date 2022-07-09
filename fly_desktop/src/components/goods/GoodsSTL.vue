@@ -141,7 +141,6 @@ export default {
 }
 
 .goods_stl_root {
-    min-height: 100vh;
     height: 100%;
 
     .delete {
