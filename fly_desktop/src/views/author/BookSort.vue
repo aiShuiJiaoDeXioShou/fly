@@ -29,7 +29,7 @@ export default {
     },
     created() {
         this.loading = true
-        axios.get('/api/qidian/yuep')
+        axios.get('http://localhost:41/api/qidian/yuep')
             .then(response => {
                 this.list = response.data
                 this.loading = false

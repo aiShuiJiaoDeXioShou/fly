@@ -29,7 +29,7 @@ export default {
     },
     mounted() {
         // 从后端接收配置文件的信息
-        axios.get('/api/config/init').then(res => {
+        axios.get('http://localhost:41/api/config/init').then(res => {
             // 将res.data由json字符串转为对象
             this.config = JSON.parse(res.data.data)
         })

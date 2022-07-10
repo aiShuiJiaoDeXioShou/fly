@@ -4,7 +4,7 @@
       <ul class="menu_list menu-list">
         <li class="menu_item">
           <div class="menu_icon">
-            <img src="../../assets/img/home_icon/duxiaoshuo.png" alt="">
+            <img src="../../assets/img/home_icon/rank.png" alt="">
           </div>
           <div class="menu_kp_link">
             <router-link class="menu-link" to="/home/">起点月票榜</router-link>
@@ -13,7 +13,7 @@
 
         <li class="menu_item">
           <div class="menu_icon">
-            <img src="../../assets/img/home_icon/duxiaoshuo.png" alt="文本编辑器">
+            <img src="../../assets/img/home_icon/htmlbianjiqi.png" alt="文本编辑器">
           </div>
           <div class="menu_kp_link">
             <router-link class="menu-link" to="/note_edit">文本编辑器</router-link>
@@ -43,7 +43,7 @@
 
             <li class="menu_item">
               <div class="menu_icon">
-                <img src="../../assets/img/home_icon/mobankuangjia.png" alt="模板">
+                <img src="../../assets/img/home_icon/jiemiancaokong.png" alt="模板">
               </div>
               <div class="menu_kp_link">
                 <router-link class="menu-link" to="/class_stl">分类模板</router-link>
@@ -167,15 +167,14 @@ export default {
 
       .menu_icon {
 
-        padding: 0px 5px 0px 5px;
+        padding: 8px 5px 0px 5px;
         border-radius: 4px;
-        line-height: 40px;
         margin-right: 10px;
         cursor: pointer;
 
         img {
           width: 20px;
-          height: auto;
+          height: 20px;
         }
 
         &:hover {
