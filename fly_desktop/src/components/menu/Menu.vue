@@ -35,7 +35,7 @@
 </template>
 
 <script>
-const { remote } = window.require('electron')
+const { remote, shell } = window.require('electron')
 export default {
     data() {
         return {
@@ -63,7 +63,8 @@ export default {
         // 菜单展开收起
         extend() {
             // 重新启动应用
-            remote.app.relaunch({ args: process.argv.slice(1) });
+            // remote.app.relaunch({ args: process.argv.slice(1) });
+            shell.openExternal('https://www.baidu.com');
             /* if (this.$refs.menu_root.classList.contains('menu-extend')) {
                 this.$refs.menu_root.classList.remove('menu-extend');
             } else {
