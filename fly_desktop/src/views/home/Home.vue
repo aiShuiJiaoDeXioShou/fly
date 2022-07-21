@@ -61,10 +61,10 @@
 
             <li class="menu_item">
               <div class="menu_icon">
-                <img src="../../assets/img/home_icon/daoru.png" alt="分类导入">
+                <img src="../../assets/img/home_icon/daoru.png" alt="下载任务">
               </div>
               <div class="menu_kp_link">
-                <router-link class="menu-link" to="/class_import">分类导入</router-link>
+                <router-link class="menu-link" to="/class_import">下载任务</router-link>
               </div>
             </li>
 
