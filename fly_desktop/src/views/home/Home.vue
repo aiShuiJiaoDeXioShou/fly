@@ -114,16 +114,16 @@ export default {
     init() {
       // 获取所有class为menu-获取所有class为menu-link的元素
       let menu_links = $('.menu_list .menu-link')
-      menu_links.eq(0).addClass('is-active')
+      menu_links.eq(0).addClass('is-avctive-menu')
       $('.menu_icon').eq(0).addClass('menu_icon_select')
       // 遍历所有menu-link元素
       menu_links.click(function () {
         // 移除所有class为menu-link的元素的class为active
         let item_link = $(this).parent().prev()
-        $('.menu-link.is-active').removeClass('is-active')
+        $('.menu-link.is-avctive-menu').removeClass('is-avctive-menu')
         $('.menu_icon').removeClass('menu_icon_select')
         // 给当前点击的元素添加class为active
-        this.classList.add('is-active')
+        this.classList.add('is-avctive-menu')
         // 找到该元素父亲的上一个兄弟
         item_link.addClass('menu_icon_select')
       })
@@ -161,6 +161,11 @@ export default {
     text-overflow: ellipsis;
     // 防止换行
     white-space: nowrap;
+
+    .is-avctive-menu {
+      color: #fff;
+      background-color: #485fc7;
+    }
 
     .menu_item {
       display: flex;
